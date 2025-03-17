@@ -1,0 +1,3 @@
+rootProject.name = 'Big'
+include 'microservice:database',
+        'microservice:kafka'
