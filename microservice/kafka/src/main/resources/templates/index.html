@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Data</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Kafka Connector Message Viewer</h2>
+<div id="messageArea"></div>
+
+<h2>Board List</h2>
+<ul id="boardList"></ul>
+
+<h2>Create Board</h2>
+<div id="logArea"></div>
+<form id="createForm">
+    <label for="title">제목:</label>
+    <input type="text" id="title" name="title" required><br>
+    <label for="content">내용:</label>
+    <textarea id="content" name="contents" required></textarea><br>
+    <button type="submit">게시물 추가</button>
+</form>
+<br>
+<form id="kafka-createForm">
+    <label for="title">제목:</label>
+    <input type="text" id="kafka-title" name="title" required><br>
+    <label for="content">내용:</label>
+    <textarea id="kafka-content" name="contents" required></textarea><br>
+    <button type="submit">Kafka Topic 전송</button>
+</form>
+<script type="text/javascript" th:src="@{/assets/js/controlboard.js}"></script>
+</body>
+</html>
